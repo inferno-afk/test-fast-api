@@ -9,7 +9,8 @@ def home():
 
 @app.get('/health')
 def health_check():
-    return {"status":"OK", 'version':2}
+    return {"status":"OK", 'version':3}
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
     uvicorn.run(host='0.0.0.0', port=port)
